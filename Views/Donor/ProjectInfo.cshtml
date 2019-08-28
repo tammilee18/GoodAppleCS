@@ -1,0 +1,32 @@
+@model WrapperModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Hi @Model.LoggedInUser.FirstName</h2>
+        <h4>@Model.ThisProject.Name</h4>
+        <p>@Model.ThisProject.Description</p>
+        <p>Goal Amount: @Model.ThisProject.GoalAmount</p>
+        <p>End Date: @Model.ThisProject.EndDate</p>
+        <div>
+            <h2>Contributions</h2>
+            
+        </div>
+        <form asp-action="NewDonation" asp-controller="Donor" asp-route-ProjectID="@Model.ThisProject.ProjectId" method="post">
+            <div class="form-group">
+                <span asp-validation-for="NewDonation.Amount"></span><br>
+                <label asp-for="NewDonation.Amount"></label>
+                <input class="form-control" asp-for="NewDonation.Amount"><br>
+            </div>
+            <button class="btn btn-success">Make Donation</button>
+        </form>
+    </div>
+</body>
+</html>

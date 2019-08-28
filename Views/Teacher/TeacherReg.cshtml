@@ -1,0 +1,41 @@
+@model Teacher
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <title>Document</title>
+</head>
+<body>
+    <h3>New Teacher registration</h3>
+    <form asp-action="Create" asp-controller="Teacher" method="post">
+        <label for="">First Name:</label><br>
+        <input type="text" asp-for="FirstName"><br>
+        <span style="color:red;" asp-validation-for="FirstName"></span> 
+        <label for="">Last Name:</label><br>
+        <input type="text" asp-for="LastName"><br>
+        <span style="color:red;" asp-validation-for="LastName"></span> 
+        <label for="">Email:</label><br>
+        <input type="email" asp-for="Email"><br>
+        <span style="color:red;" asp-validation-for="Email"></span> 
+        <label for="">District:</label><br>
+        <input type="text" asp-for="District"><br>
+        <label for="">School:</label><br>
+        <input type="text" asp-for="School"><br>
+        <label for="">Subject(s) taught:</label><br>
+        <input type="text" asp-for="Subject"><br>
+        <label for="">Password:</label><br>
+        <input type="password" asp-for="Password" placeholder="password"><br>
+        <span style="color:red;" asp-validation-for="Password"></span> 
+        <input type="password" asp-for="PasswordConfirm" placeholder="confirm password"><br>
+        <span style="color:red;" asp-validation-for="PasswordConfirm"></span> 
+        <br>
+        <button type="submit">Register</button>
+    </form>
+    <br>
+    <br>
+    <a href="/">Homepage</a>
+</body>
+</html>

@@ -1,0 +1,55 @@
+@model WrapperModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- The button that triggers the Modal -->
+
+<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Add a Project</button>
+ 
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add A Project</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form asp-action="NewProject" asp-controller="Teacher" method="post">
+            <input type="text" asp-for="newProject.Name" class="form-control" placeholder="Project Name">
+            <br>
+            <textarea asp-for="newProject.Description" class="form-control" cols="30" rows="10" placeholder="Description"></textarea>
+            <br>
+            <label for="">Amount Needed:</label>
+            <input type="number" asp-for="newProject.GoalAmount" class="form-control">
+            <br>
+            <label for="">End Date:</label>
+            <input type="date" asp-for="newProject.EndDate" class="form-control">
+        <button type="submit" class="btn btn-primary">Create a Project</button>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END Bootstrap Modal -->
+</body>
+</html>

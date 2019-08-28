@@ -1,0 +1,99 @@
+@model LoginUser
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+
+    <title>Document</title>
+</head> -->
+<header>
+      <script type="text/javascript">
+        $().ready(function () {
+            $("#formEdit").validate();
+        }
+        );
+
+        function postData() {
+        var form = $("#formEdit");
+            if (!form.valid()) 
+            {
+              alert("The data are not valid");
+            }
+            else
+                form.post();
+        }
+    </script>
+</header>
+ <body>
+  <a data-toggle="modal" data-target="#myModal">Login</a>
+<!-- <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Login</button> -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login Here</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div role="tabpanel">
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active">
+                  <a href="#TeacherTab" aria-controls="TeacherTab" role="tab" data-toggle="tab">Teacher</a>
+                </li>
+                <li role="presentation">
+                  <a href="#DonorTab" aria-controls="DonorTab" role="tab" data-toggle="tab">Donor</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="TeacherTab">
+                  <form asp-action="TeacherLogin" asp-controller="Teacher" method="post">
+                      <h2 class="text-center">Teacher Login</h2>
+                      <div class="form-group">
+                          <span asp-validation-for="Email"></span><br>
+                          <label asp-for="Email"></label>
+                          <input class="form-control" asp-for="Email"><br>
+                      </div>
+                      <div class="form-group">
+                          <span asp-validation-for="Password"></span><br>
+                          <label asp-for="Password"></label>
+                          <input class="form-control" asp-for="Password"><br>
+                      </div>
+                      <button class="btn btn-primary">Log In</button>
+                  </form>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="DonorTab">
+                  <form asp-action="DonorLogin" asp-controller="Donor" method="post">
+                      <h2 class="text-center">Donor Login</h2>
+                      <div class="form-group">
+                          <span asp-validation-for="Email"></span><br>
+                          <label asp-for="Email"></label>
+                          <input class="form-control" asp-for="Email"><br>
+                      </div>
+                      <div class="form-group">
+                          <span asp-validation-for="Password"></span><br>
+                          <label asp-for="Password"></label>
+                          <input class="form-control" asp-for="Password"><br>
+                      </div>
+                      <button class="btn btn-primary">Log In</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

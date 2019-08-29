@@ -160,7 +160,7 @@ body {
   /*===== FIXED BACKGROUND IMG DARK =====*/
 
 #fixed {
-    background-image: url('http://via.placeholder.com/1500x1000');
+    background-image: url('../img/apple-books.png');
     z-index: -1;
   }
   .dark {

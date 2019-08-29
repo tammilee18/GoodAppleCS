@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="~/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/css/Index.css">
   <link rel="shortcut icon" href="img/favicon.ico">
 	<link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
@@ -63,21 +63,21 @@
         <!------------------ END Landing page Image --------------------------------->
 
         <!--------------------- Landing Page Slogan / Overlay ---------------------------->
-              <div class="caption text-center">
-                    <h1 style="color:white;">Some Slogan should be here!</h1>
-                    <h3 style="color:white;">Why Can't I see this?????</h3>
-                    <button class="btn btn-outline-light btn-lg">SHOW UP</button>
+<div class="caption text-center">
 
-                <div class="os-animation" data-animation="bounceInUp" data-delay=".6s">
-                    <h1 style="color:white;">Some Slogan should be here!</h1>
-                </div>
-                <div class="os-animation" data-animation="" data-delay="">
-                  <h3>Why Can't I see this?????</h3>
-                </div>
-                <div class="os-animation" data-animation="" data-delay="">
-                  <button class="btn btn-outline-light btn-lg">SHOW UP</button>
-                </div>
-              </div>
+	<div class="os-animation" data-animation="bounceInUp" data-delay=".6s">
+		<h1>Welcome to Nuno</h1>
+	</div>
+
+	<div class="os-animation" data-animation="bounceInUp" data-delay=".8s">
+		<h3>Animated Bootstrap Theme</h3>
+	</div>
+			
+	<div class="os-animation" data-animation="bounceInUp" data-delay="1s">
+		<a class="btn btn-outline-light btn-lg" href="#features">Get Started</a>
+	</div>
+
+</div>
 
 
         <!-- End Landing Page Slogan -->
@@ -90,6 +90,175 @@
         </a>
   
       </div>
+      <!-- END HOME SECTION -->
+
+      <!-- START FEATUREs SECTION -->
+<div class="aos-animation" data-animation="fadeInUp">
+<div class="narrow text-center">
+	<div class="col-12">
+		<h1>If you are a teacher, sign up!</h1>
+		<p class="lead">Some sentence about how great it would be to enrich the lives of kids</p>
+		<a class="btn btn-secondary btn-sm" asp-action="NewTeacher" asp-controller="Teacher">Register as a Teacher</a>
+		<partial name="LoginPartial">
+	</div>
+</div>
+</div>
+<br>
+<br>
+<!--- Start Jumbotron -->
+<div class="jumbotron">
+<div class="narrow">
+
+	<div>
+		<h3 class="heading">Features</h3>
+		<div class="heading-underline"></div>
+	</div>
+
+<div class="row">
+	
+	<div class="col-sm-6 col-md-4">
+		<div>
+			<div class="feature">
+				<span class="fa-layers fa-4x">
+  					<i class="fa fa-circle"></i>
+  					<i class="fas fa-mobile-alt fa-inverse" data-fa-transform="shrink-6 right-.25"></i>
+				</span>
+				<h3>Mobile Friendly</h3>
+				<p>Nuno features a mobie friendly, responsive first website layout using Bootstrap.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-6 col-md-4">
+		<div>
+			<div class="feature">
+				<span class="fa-layers fa-4x">
+					<i class="fa fa-circle"></i>
+					<i class="fas fa-desktop fa-inverse" data-fa-transform="shrink-8 left-1."></i>
+				</span>
+				<h3>Full Screen Landing</h3>
+				<p>Using Bootstrap, the Nuno theme features a full screen carousel landing page.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-6 col-md-4">
+		<div>
+			<div class="feature">
+				<span class="fa-layers fa-4x">
+					<i class="fa fa-circle"></i>
+					<i class="fas fa-play fa-inverse" data-fa-transform="shrink-.5 right-1.3"></i>
+				</span>
+				<h3>Custom Animation</h3>
+				<p>Animate.css and Waypoints.js allow for smooth animations scrolling down the site.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-6 col-md-4">
+		<div>
+			<div class="feature">
+				<span class="fa-layers fa-4x">
+					<i class="fa fa-circle"></i>
+					<i class="fas fa-angle-double-down fa-inverse" data-fa-transform="shrink-5.5 down-.3"></i>
+				</span>
+				<h3>Parallax Scrolling</h3>
+				<p>Fixed background images allow the theme to have content-filled parallax scrolling sections.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-6 col-md-4">
+		<div>
+			<div class="feature">
+				<span class="fa-layers fa-4x">
+					<i class="fa fa-circle"></i>
+					<i class="fas fa-sliders-h fa-inverse" data-fa-transform="shrink-8.5 right-.2"></i>
+				</span>
+				<h3>Content Slider</h3>
+				<p>Owl.Carousel.js makes navigating content sliders seamless with it's content carousel navigation.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-6 col-md-4">
+		<div>
+			<div class="feature">
+				<span class="fa-layers fa-4x">
+					<i class="fa fa-circle"></i>
+					<i class="fab fa-wpforms fa-inverse" data-fa-transform="grow-6 right-.5"></i>
+				</span>
+				<h3>Contact Form</h3>
+				<p>The Bootsrap HTML form will send directly to your email address using PHPMailer.php.</p>
+			</div>
+		</div>
+	</div>
+
+</div> <!--- End Row -->
+
+</div> <!--- End Narrow -->
+</div>
+<!--- End Jumbotron -->
+
+<!--- Start Fixed Background IMG Dark -->
+<div class="fixed-background">
+
+<div class="row dark">
+
+	<div class=" col-12 os-animation" data-animation="fadeInUp">
+		<h3 class="heading">Built With Care</h3>
+		<div class="heading-underline"></div>
+	</div>
+
+	<div class="col-md-4">
+	<div class="os-animation" data-animation="fadeInLeft">
+		<h3>HTML 5</h3>
+		<div class="feature">
+			<span class="fa-layers fa-3x">
+				<i class="fas fa-code"></i>
+			</span>
+		</div>
+		<p class="lead">Built with the latest, HTML 5.</p>
+	</div>
+	</div>
+
+	<div class="col-md-4">
+	<div class="os-animation" data-animation="fadeInUp">
+		<h3>BOOTSTRAP 4</h3>
+		<div class="feature">
+			<span class="fa-layers fa-3x">
+				<i class="fas fa-bold"></i>
+			</span>
+		</div>
+		<p class="lead">Built with the latest, Bootstrap 4.</p>
+	</div>
+	</div>
+
+	<div class="col-md-4">
+	<div class="os-animation" data-animation="fadeInRight">
+		<h3>CSS 3</h3>
+		<div class="feature">
+			<span class="fa-layers fa-3x">
+				<i class="fab fa-css3"></i>
+			</span>
+		</div>
+		<p class="lead">Built with the latest, CSS 3.</p>
+	</div>
+	</div>
+
+</div> <!--- End of Row Dark -->
+
+	<div class="fixed-wrap">
+		<div id="fixed">
+		</div>
+	</div>
+	
+</div>
+<!--- End Fixed Background IMG Dark -->
+
+</div>
+
+      <!-- END FEATURES SECTION -->
         <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">GoodApple</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -140,7 +309,7 @@
 <h3>Contact Us, footer, socials etc</h3>
 <partial name="LoginPartial">
 <a asp-action="newDonor" asp-controller="Donor">Donor Registration</a>
-
+<br><br><br><br><br><br>v<br><br><br><br><br><br><br><br><br><br><br><br>
 
 <!--------------------- script files ----------------------------->
 <script src="~/js/jquery-3.3.1.min.js"></script>

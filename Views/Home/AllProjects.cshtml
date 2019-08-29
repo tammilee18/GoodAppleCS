@@ -1,3 +1,4 @@
+@model Project
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,5 +12,19 @@
     <a href="/">Homepage</a>
     <a href="https://www.donorschoose.org/donors/search.html">reference page</a>
     <a href="/projectinfo">Project Info</a>
+
+
+    @foreach(var p in ViewBag.AllProjects){
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">@p.Name</h5>
+    <h6>Created by - @p.Creator.FirstName</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Goal: $@p.GoalAmount.ToString("0.00")</h6>
+    <p class="card-text">@p.Description</p>
+    <a href="" class="card-link">More Info</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+    }
 </body>
 </html>

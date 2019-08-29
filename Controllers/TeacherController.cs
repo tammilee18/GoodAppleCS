@@ -87,6 +87,7 @@ namespace GoodApple.Controllers
             WrapperModel newModel = new WrapperModel();
             newModel.LoggedInUser = dbContext.users.SingleOrDefault(u => u.UserId == TeacherId);
             newModel.AllProjects = dbContext.projects.Include(p => p.Donations).ToList();
+            newModel.LoggedInUser = dbContext.users.SingleOrDefault(u => u.UserId == TeacherId);
             return View(newModel);
         }
 

@@ -24,10 +24,12 @@ namespace GoodApple.Controllers {
         [HttpGet("projects")]
         public IActionResult AllProjects()
         {
+            List<Project> AllProjects = dbContext.projects.Include(c => c.Creator).ToList();
+            ViewBag.AllProjects = AllProjects;
             return View();
         }
-        [HttpGet("projectinfo")]
-        public IActionResult ProjectInfo()
+        [HttpGet("projectinfo/{ProjectId}")]
+        public IActionResult ProjectInfo(int ProjectId)
         {
             return View();
         }

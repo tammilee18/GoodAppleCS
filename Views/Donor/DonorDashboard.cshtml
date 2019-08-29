@@ -11,24 +11,26 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <div>
-        <div>
-            <h1>Hi @Model.LoggedInUser.FirstName</h1>
-            <a href="/AllProjects">View All Projects</a>
-            <a href="/logout">Logout</a>
-        </div>
+    <partial name="DonorNavPartial" view-data="ViewData"/>
+    <div class="container">
         <div>
             <h2>Projects I've contributed to: </h2>
-            <table>
+            <table class="table table-hover">
                 <thead>
                     <tr>
-                        <td>Title</td>
+                        <td>Project Title</td>
                         <td>Amount</td>
                         <td>Date</td>
                     </tr>
                 </thead>
                 <tbody>
-
+                    @foreach(Donation each in @Model.MyDonations){
+                        <tr>
+                            <td>@each.Project.Name</td>
+                            <td>$@Math.Round(@each.Amount, 2)</td>
+                            <td>@each.CreatedAt.ToString("MMMM dd, yyyy")</td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>

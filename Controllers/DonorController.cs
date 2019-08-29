@@ -81,7 +81,7 @@ namespace GoodApple.Controllers {
             donorID = HttpContext.Session.GetInt32("UserId").Value;
             WrapperModel newModel = new WrapperModel();
             newModel.LoggedInUser = dbContext.users.SingleOrDefault(u => u.UserId == donorID);
-            newModel.AllProjects = dbContext.projects.Include(p => p.Donations).ToList();
+            newModel.MyDonations = dbContext.donations.Include(d => d.Project).Where(d => d.DonorId == donorID).ToList();
             return View(newModel);
         }
 
@@ -99,7 +99,7 @@ namespace GoodApple.Controllers {
             int donorID = HttpContext.Session.GetInt32("UserId").Value;
             WrapperModel newModel = new WrapperModel();
             newModel.LoggedInUser = dbContext.users.SingleOrDefault(u => u.UserId == donorID);
-            newModel.ThisProject = dbContext.projects.Include(p => p.Donations).ThenInclude(d => d.Donor) .SingleOrDefault(p => p.ProjectId == ProjectID);
+            newModel.ThisProject = dbContext.projects.Include(p => p.Creator).Include(p => p.Donations).ThenInclude(d => d.Donor).SingleOrDefault(p => p.ProjectId == ProjectID);
             return View(newModel);
         }
 

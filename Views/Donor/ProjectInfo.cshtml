@@ -9,24 +9,40 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <h2>Hi @Model.LoggedInUser.FirstName</h2>
-        <h4>@Model.ThisProject.Name</h4>
-        <p>@Model.ThisProject.Description</p>
-        <p>Goal Amount: @Model.ThisProject.GoalAmount</p>
-        <p>End Date: @Model.ThisProject.EndDate</p>
+    <partial name="DonorNavPartial" view-data="ViewData"/>
+    <div class="container">
         <div>
-            <h2>Contributions</h2>
-            
-        </div>
-        <form asp-action="NewDonation" asp-controller="Donor" asp-route-ProjectID="@Model.ThisProject.ProjectId" method="post">
-            <div class="form-group">
-                <span asp-validation-for="NewDonation.Amount"></span><br>
-                <label asp-for="NewDonation.Amount"></label>
-                <input class="form-control" asp-for="NewDonation.Amount"><br>
+            <h4>@Model.ThisProject.Name at @Model.ThisProject.Creator.School</h4>
+            <p>@Model.ThisProject.Description</p>
+            <p>Current Amount: $@Math.Round(@Model.ThisProject.CurrentAmount, 2)</p>
+            <p>Goal Amount: $@Math.Round(@Model.ThisProject.GoalAmount, 2)</p>
+            <p>End Date: @Model.ThisProject.EndDate</p>
+            <div>
+                @if(@Model.ThisProject.Donations.Count > 0){
+                    <h4>Contributions</h4>
+                    <ul class="list-unstyled">
+                        @foreach(Donation each in @Model.ThisProject.Donations){
+                            <li>@each.Donor.FirstName donated $@Math.Round(@each.Amount,2) on @each.CreatedAt.ToString("MMMM dd, yyyy")!</li>
+                        }
+                    </ul>
+                } else {
+                    <h4>No contributions yet...</h4>
+                }
             </div>
-            <button class="btn btn-success">Make Donation</button>
-        </form>
+            @if(@Model.ThisProject.CurrentAmount < @Model.ThisProject.GoalAmount){
+                <form asp-action="NewDonation" asp-controller="Donor" asp-route-ProjectID="@Model.ThisProject.ProjectId" method="post">
+                    <h4>Make a contribution!</h4>
+                    <div class="form-group">
+                        <span asp-validation-for="NewDonation.Amount"></span><br>
+                        <label asp-for="NewDonation.Amount"></label>
+                        <input class="form-control" asp-for="NewDonation.Amount"><br>
+                    </div>
+                    <button class="btn btn-success">Make Donation</button>
+                </form>
+            } else {
+                <h3>Goal amount has been reached!</h3>
+            }
+        </div>
     </div>
 </body>
 </html>

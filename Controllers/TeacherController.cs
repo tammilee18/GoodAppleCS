@@ -85,6 +85,7 @@ namespace GoodApple.Controllers
             //     return View("Index", "Home");
             // }
             WrapperModel newModel = new WrapperModel();
+            newModel.LoggedInUser = dbContext.users.SingleOrDefault(u => u.UserId == TeacherId);
             newModel.AllProjects = dbContext.projects.Include(p => p.Donations).ToList();
             return View(newModel);
         }
@@ -102,7 +103,7 @@ namespace GoodApple.Controllers
             WrapperModel newModel = new WrapperModel();
             newModel.LoggedInUser = dbContext.users.SingleOrDefault(u => u.UserId == CurrentTeacher);
             newModel.AllProjects = dbContext.projects.ToList();
-            return View("TeachDashboard", new{TeacherId = CurrentTeacher});
+            return View("TeachDashboard", newModel);
         }
 
     }
